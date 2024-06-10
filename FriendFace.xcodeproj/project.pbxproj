@@ -11,6 +11,10 @@
 		29BCD6552C0F27EE000CA17D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD6542C0F27EE000CA17D /* ContentView.swift */; };
 		29BCD6572C0F27EF000CA17D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD6562C0F27EF000CA17D /* Assets.xcassets */; };
 		29BCD65B2C0F27EF000CA17D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD65A2C0F27EF000CA17D /* Preview Assets.xcassets */; };
+		29BCD6682C0FD3B2000CA17D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD6672C0FD3B2000CA17D /* User.swift */; };
+		29BCD66A2C111B6F000CA17D /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD6692C111B6F000CA17D /* DetailView.swift */; };
+		29BCD66C2C11C5DF000CA17D /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD66B2C11C5DF000CA17D /* ColorTheme.swift */; };
+		29BCD66E2C124C58000CA17D /* PathStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD66D2C124C58000CA17D /* PathStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		29BCD6562C0F27EF000CA17D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29BCD6582C0F27EF000CA17D /* FriendFace.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FriendFace.entitlements; sourceTree = "<group>"; };
 		29BCD65A2C0F27EF000CA17D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		29BCD6672C0FD3B2000CA17D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		29BCD6692C111B6F000CA17D /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		29BCD66B2C11C5DF000CA17D /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		29BCD66D2C124C58000CA17D /* PathStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,10 @@
 			children = (
 				29BCD6522C0F27EE000CA17D /* FriendFaceApp.swift */,
 				29BCD6542C0F27EE000CA17D /* ContentView.swift */,
+				29BCD66D2C124C58000CA17D /* PathStore.swift */,
+				29BCD6692C111B6F000CA17D /* DetailView.swift */,
+				29BCD66B2C11C5DF000CA17D /* ColorTheme.swift */,
+				29BCD6672C0FD3B2000CA17D /* User.swift */,
 				29BCD6562C0F27EF000CA17D /* Assets.xcassets */,
 				29BCD6582C0F27EF000CA17D /* FriendFace.entitlements */,
 				29BCD6592C0F27EF000CA17D /* Preview Content */,
@@ -139,8 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29BCD66E2C124C58000CA17D /* PathStore.swift in Sources */,
 				29BCD6552C0F27EE000CA17D /* ContentView.swift in Sources */,
+				29BCD66C2C11C5DF000CA17D /* ColorTheme.swift in Sources */,
+				29BCD66A2C111B6F000CA17D /* DetailView.swift in Sources */,
 				29BCD6532C0F27EE000CA17D /* FriendFaceApp.swift in Sources */,
+				29BCD6682C0FD3B2000CA17D /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
