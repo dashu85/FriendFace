@@ -6,12 +6,14 @@
 //
 
 import Foundation
+import SwiftData
 import SwiftUI
 
 struct DetailView: View {
+    @Environment(\.modelContext) var modelContext
+    
     var user: User
     var users: [User]
-    var friendsArray: [User]
     
     var body: some View {
         ScrollView{
@@ -45,10 +47,10 @@ struct DetailView: View {
                     .padding(.vertical)
                 
                 Section {
-                    ForEach(user.friends, id: \.self) { friendID in
+                    ForEach(user.friends, id: \.id) { friendID in
                         if let friend = users.first(where: { $0.id == friendID.id }) {
                             NavigationLink(value: friend) {
-                                Text(friend.name)
+                                Text(friendID.name)
                             }
                         }
                     }
@@ -58,9 +60,6 @@ struct DetailView: View {
                 }
             }
             .navigationTitle(user.name)
-            .navigationDestination(for: User.self) { i in
-                DetailView(user: i, users: users, friendsArray: [User]())
-            }
             .padding()
         }
         .background(backgroundGradient)
@@ -70,5 +69,5 @@ struct DetailView: View {
 }
 
 //#Preview {
-//    DetailView(user: User(from: <#T##any Decoder#>), users: <#T##[User]#>, friendsArray: <#T##[User]#>)
+//    DetailView()
 //}

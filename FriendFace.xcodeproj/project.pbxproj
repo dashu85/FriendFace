@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		298E612F2C18AC42003F8AD1 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298E612E2C18AC42003F8AD1 /* Friend.swift */; };
 		29BCD6532C0F27EE000CA17D /* FriendFaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD6522C0F27EE000CA17D /* FriendFaceApp.swift */; };
 		29BCD6552C0F27EE000CA17D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29BCD6542C0F27EE000CA17D /* ContentView.swift */; };
 		29BCD6572C0F27EF000CA17D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29BCD6562C0F27EF000CA17D /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		298E612E2C18AC42003F8AD1 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		29BCD64F2C0F27EE000CA17D /* FriendFace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FriendFace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29BCD6522C0F27EE000CA17D /* FriendFaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendFaceApp.swift; sourceTree = "<group>"; };
 		29BCD6542C0F27EE000CA17D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				29BCD6692C111B6F000CA17D /* DetailView.swift */,
 				29BCD66B2C11C5DF000CA17D /* ColorTheme.swift */,
 				29BCD6672C0FD3B2000CA17D /* User.swift */,
+				298E612E2C18AC42003F8AD1 /* Friend.swift */,
 				29BCD6562C0F27EF000CA17D /* Assets.xcassets */,
 				29BCD6582C0F27EF000CA17D /* FriendFace.entitlements */,
 				29BCD6592C0F27EF000CA17D /* Preview Content */,
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29BCD66E2C124C58000CA17D /* PathStore.swift in Sources */,
+				298E612F2C18AC42003F8AD1 /* Friend.swift in Sources */,
 				29BCD6552C0F27EE000CA17D /* ContentView.swift in Sources */,
 				29BCD66C2C11C5DF000CA17D /* ColorTheme.swift in Sources */,
 				29BCD66A2C111B6F000CA17D /* DetailView.swift in Sources */,

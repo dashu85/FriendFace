@@ -19,6 +19,6 @@ extension ShapeStyle where Self == Color {
 }
 
 let backgroundGradient = LinearGradient(
-    colors: [Color.yellow, Color.red],
+    colors: [Color.yellow, Color.orange, Color.red],
     startPoint: .top, endPoint: .bottom)
 

@@ -9,22 +9,27 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
-    @State private var users = [User]()
-    @State private var isOnline = true
+    @Environment(\.modelContext) var modelContext
+    @Query(sort: \User.name) var users: [User]
     
-    @State private var path = PathStore()
+    @AppStorage("lastFetched")  var lastFetched: Double = Date.now.timeIntervalSinceReferenceDate
+    
+    @State private var isLoading: Bool = false
+    
+//    @State private var path = PathStore()
+    @State private var path = NavigationPath()
 
     init() {
-            // Set the large title text color for the entire app
+            // Set the large title text colour for the entire app
             UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-        }
+    }
     
     var body: some View {
-        NavigationStack(path: $path.path) {
+        NavigationStack {
             ZStack {
                 backgroundGradient
                 List {
-                    ForEach(users) { user in
+                    ForEach(users, id: \.id) { user in
                         Section {
                             NavigationLink(value: user) {
                                 HStack {
@@ -32,8 +37,6 @@ struct ContentView: View {
                                         .font(.title2)
                                     user.isActive ? Text("online").foregroundStyle(.green) : Text("offline").foregroundStyle(.red)
                                         .font(.body)
-                                    
-                                    // UserDefaults.standard.set(order.name, forKey: "path")
                                 }
                             }
                         }
@@ -41,39 +44,35 @@ struct ContentView: View {
                         .listSectionSpacing(5)
                     }
                 }
+                .navigationTitle("FriendFace")
+                .navigationDestination(for: User.self) { user in
+                    DetailView(user: user, users: users)
+                }
                 .opacity(0.8)
                 .background(backgroundGradient)
                 .scrollContentBackground(.hidden)
             }
-            .navigationTitle("FriendFace")
-            .navigationDestination(for: User.self) { user in
-                DetailView(user: user, users: users, friendsArray: [User]())
-            }
             .preferredColorScheme(.dark)
             .task {
-                await fetchData()
+                do {
+                    isLoading = true
+                    defer{
+                        isLoading = false
+                    }
+                    
+                    if hasExceededTimeLimit() || users.isEmpty {
+                        clearDatabase()
+                        try await fetchJSON()
+                    }
+                } catch {
+                    print(error)
+                }
             }
-        }
-    }
-    
-    
-    
-    func fetchData() async {
-        // create url
-        guard let url = URL(string: "https://www.hackingwithswift.com/samples/friendface.json") else {
-            print("failed to load url")
-            return
-        }
-        
-        // fetch data from that url
-        do {
-            let (data, _) = try await URLSession.shared.data(from: url)
-            // decode that data
-            if let decodedResponse = try? JSONDecoder().decode([User].self, from: data) {
-                users = decodedResponse
+            .overlay {
+                if isLoading {
+                    ProgressView()
+                }
             }
-        } catch {
-            print("didn't work")
         }
     }
 }

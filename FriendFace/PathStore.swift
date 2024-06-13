@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftData
 import SwiftUI
 
 @Observable
@@ -25,7 +26,6 @@ class PathStore {
                 return
             }
         }
-        
         path = NavigationPath()
     }
     
